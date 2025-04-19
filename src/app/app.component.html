@@ -1,0 +1,57 @@
+<div class="page_heading dff">
+  <h1 class="page_head df-ai">Tactus</h1>
+  <div class="page_elms_container df-ai">
+    <button class="btn_mode_toggler dff" (click)="changeMode()">{{mode}}</button>
+    <button class="btn_restart" (click)="restartDelay(0, '')">Restart</button>
+  </div>
+</div>
+<span class="header_divider"></span>
+<div class="main dff">
+  <div class="game_container dff">
+    <div class="game_row dff game_row1">
+      <div class="game_block dff game_block0" id="0" (click)="fillBlock(0)">{{outputs[0]}}</div>
+      <div class="column_divider"></div>
+      <div class="game_block dff game_block1" id="1" (click)="fillBlock(1)">{{outputs[1]}}</div>
+      <div class="column_divider"></div>
+      <div class="game_block dff game_block2" id="2" (click)="fillBlock(2)">{{outputs[2]}}</div>
+    </div>
+    <span class="row_divider"></span>
+    <div class="game_row dff game_row2">
+      <div class="game_block dff game_block3" id="3" (click)="fillBlock(3)">{{outputs[3]}}</div>
+      <div class="column_divider"></div>
+      <div class="game_block dff game_block4" id="4" (click)="fillBlock(4)">{{outputs[4]}}</div>
+      <div class="column_divider"></div>
+      <div class="game_block dff game_block5" id="5" (click)="fillBlock(5)">{{outputs[5]}}</div>
+    </div>
+    <span class="row_divider"></span>
+    <div class="game_row dff game_row3">
+      <div class="game_block dff game_block6" id="6" (click)="fillBlock(6)">{{outputs[6]}}</div>
+      <div class="column_divider"></div>
+      <div class="game_block dff game_block7" id="7" (click)="fillBlock(7)">{{outputs[7]}}</div>
+      <div class="column_divider"></div>
+      <div class="game_block dff game_block8" id="8" (click)="fillBlock(8)">{{outputs[8]}}</div>
+    </div>
+  </div>
+  <div class="game_lines_container dff">
+    <span class="win_line row_line1" [style.width]="winningType[0]*widthDims+'px'"></span>
+    <span class="win_line row_line2" [style.width]="winningType[1]*widthDims+'px'"></span>
+    <span class="win_line row_line3" [style.width]="winningType[2]*widthDims+'px'"></span>
+    <span class="win_line col_line1" [style.width]="winningType[3]*widthDims+'px'"></span>
+    <span class="win_line col_line2" [style.width]="winningType[4]*widthDims+'px'"></span>
+    <span class="win_line col_line3" [style.width]="winningType[5]*widthDims+'px'"></span>
+    <span class="win_line dia_line1" [style.width]="winningType[6]*widthDiags+'px'"></span>
+    <span class="win_line dia_line2" [style.width]="winningType[7]*widthDiags+'px'"></span>
+  </div>
+</div>
+<div class="show_winner" [style.display]="winnerDisplay">
+  {{ winner }}
+</div>
+<div [className]="'turn_show user_turn dff ' + active_user_turn">
+  Your turn
+</div>
+<div [className]="'turn_show ai_turn dff ' + active_ai_turn">
+  AI turn
+</div>
+<div class="trademark dff">
+  The &nbsp;Aryan
+</div>
